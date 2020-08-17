@@ -18,7 +18,7 @@ USER_AGENT = 'Mozilla/5.0'
 LOG_LEVEL = 'ERROR'  # to only display errors
 LOG_FORMAT = '%(levelname)s: %(message)s'
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
