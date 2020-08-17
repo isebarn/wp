@@ -50,7 +50,7 @@ class RootSpider(scrapy.Spider):
   def start_requests(self):
     self.sites = getattr(self, 'sites', 'sites.txt')
 
-    start_urls = self.read_file('sites.txt')[0:3]
+    start_urls = self.read_file('sites.txt')
 
     for url in start_urls:
       yield scrapy.Request(url=url,
