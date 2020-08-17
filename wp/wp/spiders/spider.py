@@ -48,6 +48,7 @@ class RootSpider(scrapy.Spider):
     return file.readlines()
 
   def start_requests(self):
+    self.headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.2840.71 Safari/539.36'}
     self.sites = getattr(self, 'sites', 'sites.txt')
 
     start_urls = self.read_file('sites.txt')
@@ -56,7 +57,8 @@ class RootSpider(scrapy.Spider):
       yield scrapy.Request(url=url,
         callback=self.parser,
         errback=self.errbacktest,
-        meta={'root': url})
+        meta={'root': url},
+        headers=self.headers)
 
   def parser(self, response):
     plugins = response.xpath("//script/@src").extract()

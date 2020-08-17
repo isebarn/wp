@@ -19,7 +19,7 @@ LOG_LEVEL = 'ERROR'  # to only display errors
 LOG_FORMAT = '%(levelname)s: %(message)s'
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
-
+DOWNLOAD_FAIL_ON_DATALOSS = True
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
