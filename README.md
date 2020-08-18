@@ -22,21 +22,21 @@ source /venv/bin/activate
 #### Environment variables
 You will need two environment variables, ```DATABASE``` and ```BROWSER```, for a database link
 
-'''
+```
 export WP_DATABASE=postgresql://POSTGRES_USER:POSTGRES_PW@POSTGRES_HOST:5432/POSTGRES_DB
 export EMAIL=SENDER_EMAIL_ADDRESS@gmail.com
 export PASSWORD=EMAIL_SENDER_PASSWORD
 export RECIPENT=RECIPENT_EMAIL_ADDRESS@gmail.com
-'''
+```
 
 You can also create a `.env` file in the same folder as `settings.py`
 
-'''
+```
 WP_DATABASE=postgresql://POSTGRES_USER:POSTGRES_PW@POSTGRES_HOST:5432/POSTGRES_DB
 EMAIL=SENDER_EMAIL_ADDRESS@gmail.com
 PASSWORD=EMAIL_SENDER_PASSWORD
 RECIPENT=RECIPENT_EMAIL_ADDRESS@gmail.com
-'''
+```
 
 #### Python packages installation
 ```
