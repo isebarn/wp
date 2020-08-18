@@ -16,8 +16,6 @@ class Email:
   def sendmail(self):
     from_address= self.user['email']
 
-    smtp_server = 'smtp.gmail.com'
-    smtp_port= 587
     smtp_user= self.user['email']
     smtp_password= self.user['password']
 
@@ -30,8 +28,6 @@ class Email:
     filename = "data.json"
 
     with open(filename, "rb") as attachment:
-      # Add file as application/octet-stream
-      # Email client can usually download this automatically as attachment
       part = MIMEBase("application", "octet-stream")
       part.set_payload(attachment.read())
 
@@ -45,8 +41,7 @@ class Email:
         f"attachment; filename= {filename}",
     )
 
-
-    server = smtplib.SMTP(smtp_server, smtp_port)
+    server = smtplib.SMTP('mail.mgdsw.info')
     server.ehlo()
     server.starttls()
     server.login(smtp_user, smtp_password)
@@ -55,6 +50,3 @@ class Email:
 
 if __name__ == "__main__":
   email = Email({'email': os.environ.get("EMAIL"), 'password': os.environ.get("PASSWORD")})
-
-
-# https://stackoverflow.com/questions/16512592/login-credentials-not-working-with-gmail-smtp
